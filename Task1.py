@@ -9,11 +9,14 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("error", message=".*check_inverse*.", category=UserWarning, append=False)
 
-source = "https://fr.wikipedia.org"
+source = "https://en.wikipedia.org"
 
 # get the html from address
 def read_html(address):
- return urllib2.urlopen(source+address).read()
+ if address.__contains__("https://en.wikipedia.org/wiki"):
+  return urllib2.urlopen(address).read()
+ else:
+  return urllib2.urlopen(source+address).read()
 
 # get the first link from a BeautifulSoup object
 def first_link(soup):
@@ -24,7 +27,7 @@ def first_link(soup):
 
 # run search
 def run_search_to_philosophy_page(initial_address, max_iterations=100, verbose=False):
- target_page = "/wiki/Philosophie"
+ target_page = "/wiki/Philosophy"
  iteration = 0
  pages_visited = []
  current_address = initial_address if "/wiki/" in initial_address else "/wiki/"+initial_address
