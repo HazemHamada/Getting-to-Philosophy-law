@@ -24,7 +24,7 @@ def first_link(soup):
 
 # run search
 def run_search_to_philosophy_page(initial_address, max_iterations=100, verbose=False):
- target_page = "/wiki/Philosophie"
+ target_page = "/wiki/Philosophy"
  iteration = 0
  pages_visited = []
  current_address = initial_address if "/wiki/" in initial_address else "/wiki/"+initial_address
