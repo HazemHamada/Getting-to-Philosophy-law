@@ -52,7 +52,7 @@ def run_search_to_philosophy_page(initial_address, max_iterations=100, verbose=F
 if __name__ == "__main__":
   b=1
   while b==1:
-   print("enter the topic to begin search with 'ex: spotify, music, dance, etc.' or 0 to exit")
+   print("enter the topic to begin search with 'ex: spotify, music, dance, etc.' or the link itself or 0 to exit")
    address=input()
    if address!='0':
     try:
