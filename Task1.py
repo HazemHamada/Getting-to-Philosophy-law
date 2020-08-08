@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("error", message=".*check_inverse*.", category=UserWarning, append=False)
 
-source = "https://fr.wikipedia.org"
+source = "https://en.wikipedia.org"
 
 # get the html from address
 def read_html(address):
